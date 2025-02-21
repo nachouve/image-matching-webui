@@ -1,0 +1,10 @@
+opencv-contrib-python
+opencv-python
+numpy
+requests
+colorama
+matplotlib
+seaborn
+flask
+torchvision
+pycolmap==0.6.1

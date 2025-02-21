@@ -241,8 +241,10 @@ def fig2im(fig: matplotlib.figure.Figure) -> np.ndarray:
     """
     fig.canvas.draw()
     (width, height) = fig.canvas.get_width_height()
-    buf_ndarray = np.frombuffer(fig.canvas.tostring_rgb(), dtype="u1")
-    return buf_ndarray.reshape(height, width, 3)
+    buf_ndarray = np.frombuffer(fig.canvas.tostring_argb(), dtype="u1")
+    buf_ndarray = buf_ndarray.reshape(height, width, 4)
+    buf_ndarray = buf_ndarray[:, :, [1, 2, 3]]  # Convert ARGB to RGB
+    return buf_ndarray
 
 
 def draw_matches_core(
