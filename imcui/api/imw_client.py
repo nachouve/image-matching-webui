@@ -33,7 +33,7 @@ API_URL_EXTRACT = f"{ENDPOINT}/v1/extract"
 
 def read_image(path: str) -> str:
     """
-    Read an image from a file, encode it as a JPEG and then as a base64 string.
+    Read an image from a file, encode it as a PNG and then as a base64 string.
 
     Args:
         path (str): The path to the image to read.
@@ -47,7 +47,7 @@ def read_image(path: str) -> str:
     # Encode the image as a png, NO COMPRESSION!!!
     retval, buffer = cv2.imencode(".png", img)
 
-    # Encode the JPEG as a base64 string
+    # Encode the PNG as a base64 string
     b64img = base64.b64encode(buffer).decode("utf-8")
 
     return b64img
