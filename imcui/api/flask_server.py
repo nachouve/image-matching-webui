@@ -10,11 +10,11 @@ from ..hloc import DEVICE
 from ..ui import get_version
 
 
-# This is just a simple Flask server that serves the ImageMatchingAPI.
+# This is just a simple Flask server version of ray ImageMatchingService (server.py).
 # IMPORTANT: It is not meant to be used in production, but rather as a simple way to test the API.
 #
 # To launch the server, run the following command in the terminal at the root of the project:
-#    python -m imcui.api.flask_server.py
+#    python -m imcui.api.flask_server
 #
 # This will start the server on http://localhost:8001.
 #
